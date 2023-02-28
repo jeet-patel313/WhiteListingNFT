@@ -1,11 +1,4 @@
 const main = async() => {
-  
-  const [deployer] = await hre.ethers.getSigners();
-  const accountBalance = await deployer.getBalance();
-
-  console.log("Deploying contracts with account: ", deployer.address);
-  console.log("Account balance: ", accountBalance.toString());
-  
   // This will compile our contract and generate the necessary files we need to work with our contract under the artifacts directory.
   const whiteListNFTContractFactory = await hre.ethers.getContractFactory("WhiteListNFT");
   const whitelistContractNFT = await whiteListNFTContractFactory.deploy();
